@@ -29,10 +29,11 @@ class PostsController < ApplicationController
   def update
   	@post = Post.find(params[:id])
  
-  	if @post.update(params[:post])
+  	if @post.update(params[:post].permit(:title, :url, :description))
     redirect_to @post
   	else
     render 'edit'
+  	
   	end
   end
 
