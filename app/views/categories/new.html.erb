@@ -1,12 +1,12 @@
 <%= form_for @categories do |f| %>
 
+<%= render 'shared/content_error', :error => @categories %>
+
 
   <p>
   <%= f.label :name %><br>
   <%= f.text_field :name %>
-</p>
+  </p>
 
-
-
-  <%= f.submit %>
+ <%= f.submit %>
 <% end %>
