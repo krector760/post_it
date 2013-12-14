@@ -3,7 +3,8 @@ class Post < ActiveRecord::Base
 	has_many :comments
 	has_many :post_categories
 	has_many :categories, through: :post_categories
-
-	validates :title, :url, presence: true,
-                    length: { minimum: 5 }
+	
+	validates :title, presence: true, length: { minimum: 5 }
+	validates :description, presence: true
+	validates :url, presence: true, length: { minimum: 3 }
 end

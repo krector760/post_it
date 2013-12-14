@@ -1,12 +1,12 @@
-<%= form_for @categories do |f| %>
+<%= render 'shared/content_title', title: "New Category" %>
 
-<%= render 'shared/content_error', :error => @categories %>
-
-
-  <p>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
-  </p>
-
- <%= f.submit %>
-<% end %>
+<div class='well'>
+	<%= render 'shared/content_error', :error => @category %>
+	<%= form_for @category do |f| %>
+		<div class='control-group'>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		<%= f.submit "Create Category", class: 'btn btn-success' %>
+	<% end %>
+</div>

@@ -1,3 +1,6 @@
+<p class='pull-right'>
+	[<%= link_to 'edit this post', edit_post_path(@post)%>]
+</p>
 <p>
 <%= render @post.categories %>		
 </p>
@@ -7,29 +10,14 @@
 <p> <%= @post.description %> </p>
 <hr/>
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
+<div class='span8 well'>
 
-  <h2>Add a comment:</h2>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render @post.comments %>
+
+
+</div>
+<div class='span8 well'>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+</div>

@@ -1,22 +1,22 @@
 class CategoriesController < ApplicationController
-
 def index
-  	@categories = Category.all
+  	@category = Category.all
 end
 
   def show
-  	@categories = Category.find(params[:id])
+  	@category = Category.find(params[:id])
   end
 
   def new
-  	@categories = Category.new
+  	@category = Category.new
   end
 
   def create
-  	@categories = Category.new(post_params)
+  	@category = Category.new(category_params)
 
-  		if @categories.save
-    	redirect_to action: 'index'
+  		if @category.save
+        flash[:notice] = "Category has been created"
+    	redirect_to posts_path
   		else
     	render 'new'
   		end
@@ -36,8 +36,7 @@ end
   end
 
   private
-  def post_params
-    params.require(:category).permit(:name,)
+  def category_params
+    params.require(:category).permit(:name)
   end
-
 end
