@@ -31,7 +31,14 @@ div.nav_item {
   float: left;
 }
 
-.label  {
+.label {
+  a, a:hover, a:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.badge {
   a, a:hover, a:focus {
     color: #fff;
     text-decoration: none;

@@ -1,13 +1,10 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br />
+<%= form_for [@post, @comment] do |f| %>
+<%= render 'shared/content_error', obj: @comment %>
+  <div class='control-group'>
+    
+    <%= f.label :body %>
     <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+ </div>
+    <%= f.submit "Create comment", class: "btn btn-primary" %>
+  
 <% end %>
