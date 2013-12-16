@@ -19,9 +19,13 @@
 </p>
 
 </div>
-<!--<select multiple='multiple' name='categories'>
-	<option value='1'>
-</select>	-->	
+
+<div class='control-group'>
+	<%= f.label "Categories" %>
+	<%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+	<% cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text } %>
+	<% end %>
+</div>	
 
 
   <%= f.submit 'Create Post', class: 'btn btn-primary' %>
