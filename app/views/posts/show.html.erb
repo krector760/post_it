@@ -8,7 +8,17 @@
 <%= render 'shared/content_title', title: @post.title %>
 
 <p> <%= @post.description %> </p>
+<p><%= @post.word_count %></p>
 <hr/>
 <h2>Comments</h2>
-<h2>Add a comment:</h2>
+
 <%= render "comments/form" %>
+
+<% @post.comments.each do |comment| %>
+	<div class="well span8">
+		<em>"<%= comment.body %>"</em><br/>
+		<span class='quiet'>by </span><%= comment.creator.username %>
+			<small> at <%= comment.created_at %></small><br><br>
+			
+	</div>
+<%end%>

@@ -2,7 +2,7 @@
 <div class='well'>
 <%= form_for @post do |f| %>
   
-<%= render 'shared/content_error', :error => @post %>
+<%= render 'shared/content_error', :obj => @post %>
 <div class='control-group'>
 
   <p>
@@ -19,6 +19,11 @@
 </p>
 
 </div>
+<!--<select multiple='multiple' name='categories'>
+	<option value='1'>
+</select>	-->	
+
+
   <%= f.submit 'Create Post', class: 'btn btn-primary' %>
 
 <% end %>

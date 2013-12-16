@@ -1,7 +1,7 @@
 <%= render 'shared/content_title', title: "New Category" %>
 
 <div class='well'>
-	<%= render 'shared/content_error', :error => @category %>
+	<%= render 'shared/content_error', :obj => @category %>
 	<%= form_for @category do |f| %>
 		<div class='control-group'>
 			<%= f.label :name %>
