@@ -19,10 +19,5 @@
 
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
-	<div class="well span8">
-		<em>"<%= comment.body %>"</em><br/>
-		<span class='quiet'>by </span><%= comment.creator.username %>
-			<small> at <%= display_datetime(comment.created_at) %></small><br><br>
-			
-	</div>
+	<%= render 'comments/comment', comment: comment, show_post: false %>
 <%end%>
