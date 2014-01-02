@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131222225114) do
+ActiveRecord::Schema.define(version: 20131228182801) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -45,5 +45,14 @@ ActiveRecord::Schema.define(version: 20131222225114) do
 
 # Could not dump table "users" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
+
+  create_table "votes", force: true do |t|
+    t.boolean  "votes"
+    t.integer  "user_id"
+    t.integer  "voteable_id"
+    t.string   "voteable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
