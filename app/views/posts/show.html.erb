@@ -19,5 +19,5 @@
 
 <h2>Comments</h2>
 <% @post.comments.each do |comment| %>
-	<%= render 'comments/comment', comment: comment, show_post: false %>
+	<p><%= render 'comments/comment', comment: comment, show_post: false %></p>
 <%end%>

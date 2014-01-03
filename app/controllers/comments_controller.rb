@@ -16,7 +16,7 @@ end
 
   def vote
     @comment = Comment.find(params[:id])
-    @vote = Vote.create(voteable: comment, creator: current_user, votes: params[:vote])
+    @vote = Vote.create(voteable: @comment, creator: current_user, votes: params[:vote])
     
     respond_to do |format|
         format.html do
