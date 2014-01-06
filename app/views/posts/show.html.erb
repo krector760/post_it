@@ -18,6 +18,6 @@
 <% end %>
 
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
+<% @post.reload.comments.each do |comment| %>
 	<p><%= render 'comments/comment', comment: comment, show_post: false %></p>
 <%end%>
